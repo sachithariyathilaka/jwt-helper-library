@@ -14,17 +14,24 @@ import java.util.Map;
 import java.util.function.Function;
 
 /**
- * @record JwtTokenUtil is provided the needed util jwt token related functions
+ * @record JwtTokenUtil
+ * @description This is provided the needed util jwt token related functions.
+ *
+ * @author Sachith Ariyathilaka
+ * @version 1.0.0
+ * @date 2024/03/11
  */
 public record JwtTokenUtil(@Getter long tokenValidityPeriod,
                            String tokenSecret,
                            SignatureAlgorithm signatureAlgorithm) implements Serializable {
 
     /**
-     * Generate jwt token.
+     * @method generateToken
+     * @description Generate jwt token.
      *
      * @param claimMap the claim map
      * @param username the username
+     *
      * @return the token
      */
     public String generateToken(HashMap<String, Object> claimMap, String username) {
@@ -42,10 +49,12 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
 
 
     /**
-     * Gets claim from token.
+     * @method getClaimFromToken
+     * @description Gets claim from token.
      *
      * @param claimType the claim type
      * @param token     the token
+     *
      * @return the claim
      */
     public Object getClaimFromToken(ClaimType claimType, String token) {
@@ -63,15 +72,26 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
         };
     }
 
+    /**
+     * @method getClaimFromToken
+     * @description Gets specific claim from the claim list.
+     *
+     * @param claims the claim list
+     * @param claimsResolver     claim filter function
+     *
+     * @return the claim
+     */
     private <T> T getClaimFromToken(Claims claims, Function<Claims, T> claimsResolver) {
         return claimsResolver.apply(claims);
     }
 
     /**
-     * Validate token boolean.
+     * @method validateToken
+     * @description Validate token boolean.
      *
      * @param token       the token
      * @param userDetails the user details
+     *
      * @return the boolean
      */
     public boolean validateToken(String token, UserDetails userDetails) {
@@ -80,12 +100,14 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
     }
 
     /**
-     * Is token expired boolean.
+     * @method isTokenExpired
+     * @description Is token expired boolean.
      *
      * @param token the token
+     *
      * @return the boolean
      */
-    public Boolean isTokenExpired(String token) {
+    public boolean isTokenExpired(String token) {
         final Date expiration = (Date) getClaimFromToken(ClaimType.EXPIRATION_DATE, token);
         return expiration.before(new Date());
     }
