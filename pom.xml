@@ -49,8 +49,22 @@
         </developer>
     </developers>
 
+    <!-- Repository information -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <!-- Plugin repository information -->
     <pluginRepositories>
+
         <pluginRepository>
             <id>central</id>
             <name>Central Repository</name>
@@ -63,6 +77,7 @@
                 <updatePolicy>never</updatePolicy>
             </releases>
         </pluginRepository>
+
     </pluginRepositories>
 
     <!-- Profile information -->
