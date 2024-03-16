@@ -15,7 +15,12 @@ import java.util.function.Function;
 
 /**
  * @record JwtTokenUtil
- * @description This is provided the needed util jwt token related functions.
+ * @description This class is provided the needed util jwt token related functions
+ * @implements Serializable
+ *
+ * @param tokenValidityPeriod the token validity period
+ * @param tokenSecret the token secret
+ * @param signatureAlgorithm the signature algorithm
  *
  * @author Sachith Ariyathilaka
  * @version 1.0.0
@@ -27,7 +32,7 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
 
     /**
      * @method generateToken
-     * @description Generate jwt token.
+     * @description Generate jwt token
      *
      * @param claimMap the claim map
      * @param username the username
@@ -52,7 +57,7 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
 
     /**
      * @method getClaimFromToken
-     * @description Gets claim from token.
+     * @description Gets claim from token
      *
      * @param claimType the claim type
      * @param token     the token
@@ -78,7 +83,7 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
 
     /**
      * @method getClaimFromToken
-     * @description Gets specific claim from the claim list.
+     * @description Gets specific claim from the claim list
      *
      * @param claims the claim list
      * @param claimsResolver     claim filter function
@@ -91,7 +96,7 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
 
     /**
      * @method validateToken
-     * @description Validate token boolean.
+     * @description Validate token boolean
      *
      * @param token       the token
      * @param userDetails the user details
@@ -109,7 +114,7 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
 
     /**
      * @method isTokenExpired
-     * @description Is token expired boolean.
+     * @description Is token expired boolean
      *
      * @param token the token
      *

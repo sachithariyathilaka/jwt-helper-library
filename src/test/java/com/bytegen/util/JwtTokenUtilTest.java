@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 /**
  * @class JwtTokenUtilTest
- * @description This class is used to unit test the functionalities of JWTTokenUtil class using JUnit.
+ * @description This class is used to unit test the functionalities of JWTTokenUtil class using JUnit
  *
  * @author Sachith Ariyathilaka
  * @version 1.0.0
@@ -30,7 +30,7 @@ public class JwtTokenUtilTest {
 
     /**
      * @method init
-     * @description This method is the @BeforeClass method of the JWTTokenUtilTest.
+     * @description This method is the @BeforeClass method of the JWTTokenUtilTest
      */
     @BeforeClass
     public static void init() {
@@ -81,7 +81,7 @@ public class JwtTokenUtilTest {
 
     /**
      * @method initGenerateTokenTest
-     * @description This method is the @Before method of the generateTokenTest.
+     * @description This method is the @Before method of the generateTokenTest
      */
     @Before
     public void initGenerateTokenTest() {
@@ -91,7 +91,7 @@ public class JwtTokenUtilTest {
 
     /**
      * @method generateTokenTest
-     * @description This method is the test case for generateToken.
+     * @description This method is the test case for generateToken
      */
     @Test
     public void generateTokenTest() {
@@ -101,7 +101,7 @@ public class JwtTokenUtilTest {
 
     /**
      * @method intGetClaimFromTokenTest
-     * @description This method is the @Before method of the getClaimFromTokenTest.
+     * @description This method is the @Before method of the getClaimFromTokenTest
      */
     @Before
     public void intGetClaimFromTokenTest() {
@@ -111,7 +111,7 @@ public class JwtTokenUtilTest {
 
     /**
      * @method getClaimFromTokenTest
-     * @description This method is the test case for getClaimFromToken.
+     * @description This method is the test case for getClaimFromToken
      */
     @Test
     public void getClaimFromTokenTest() {
@@ -124,7 +124,7 @@ public class JwtTokenUtilTest {
 
     /**
      * @method intValidateTokenTest
-     * @description This method is the @Before method of the validateTokenTest.
+     * @description This method is the @Before method of the validateTokenTest
      */
     @Before
     public void intValidateTokenTest() {
@@ -133,7 +133,7 @@ public class JwtTokenUtilTest {
 
     /**
      * @method validateTokenTest
-     * @description This method is the test case for validateToken.
+     * @description This method is the test case for validateToken
      */
     @Test
     public void validateTokenTest() {
@@ -143,7 +143,7 @@ public class JwtTokenUtilTest {
 
     /**
      * @method intIsTokenExpiredTest
-     * @description This method is the @Before method of the isTokenExpiredTest.
+     * @description This method is the @Before method of the isTokenExpiredTest
      */
     @Before
     public void intIsTokenExpiredTest() {
@@ -152,7 +152,7 @@ public class JwtTokenUtilTest {
 
     /**
      * @method isTokenExpiredTest
-     * @description This method is the test case for isTokenExpired.
+     * @description This method is the test case for isTokenExpired
      */
     @Test
     public void isTokenExpiredTest() {
