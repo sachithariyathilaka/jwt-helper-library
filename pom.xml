@@ -176,8 +176,8 @@
     <!-- Distribution management -->
     <distributionManagement>
         <repository>
-            <id>github</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
+            <id>GitHub</id>
+            <name>GitHub Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/sachithariyathilaka/jwt-helper</url>
         </repository>
     </distributionManagement>
