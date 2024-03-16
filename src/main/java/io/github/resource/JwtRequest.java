@@ -1,4 +1,4 @@
-package com.bytegen.resource;
+package io.github.resource;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

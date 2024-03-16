@@ -1,6 +1,6 @@
-package com.bytegen.util;
+package io.github.util;
 
-import com.bytegen.enums.ClaimType;
+import io.github.enums.ClaimType;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

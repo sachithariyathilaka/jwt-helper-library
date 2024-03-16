@@ -1,4 +1,4 @@
-package com.bytegen.enums;
+package io.github.enums;
 
 /**
  * @enum ClaimType
