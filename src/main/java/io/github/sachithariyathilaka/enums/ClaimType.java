@@ -1,4 +1,4 @@
-package io.github.enums;
+package io.github.sachithariyathilaka.enums;
 
 /**
  * @enum ClaimType

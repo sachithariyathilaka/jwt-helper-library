@@ -1,7 +1,7 @@
-package io.github.filter;
+package io.github.sachithariyathilaka.filter;
 
-import io.github.util.JwtTokenUtil;
-import io.github.enums.ClaimType;
+import io.github.sachithariyathilaka.enums.ClaimType;
+import io.github.sachithariyathilaka.util.JwtTokenUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

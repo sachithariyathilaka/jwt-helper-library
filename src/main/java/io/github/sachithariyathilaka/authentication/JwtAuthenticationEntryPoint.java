@@ -1,4 +1,4 @@
-package io.github.authentication;
+package io.github.sachithariyathilaka.authentication;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
