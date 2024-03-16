@@ -1,7 +1,7 @@
-package io.github.sachithariyathilaka.filter;
+package com.bytegen.filter;
 
-import io.github.sachithariyathilaka.enums.ClaimType;
-import io.github.sachithariyathilaka.util.JwtTokenUtil;
+import com.bytegen.enums.ClaimType;
+import com.bytegen.util.JwtTokenUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
