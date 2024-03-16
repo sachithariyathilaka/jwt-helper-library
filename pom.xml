@@ -1,82 +1,174 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.bytegen</groupId>
-  <artifactId>jwt-helper</artifactId>
-  <version>1.0.0</version>
+    <!-- Core information -->
+    <groupId>com.bytegen</groupId>
+    <artifactId>jwt-helper</artifactId>
+    <version>1.0.0</version>
 
-  <packaging>jar</packaging>
+    <!-- Packaging information -->
+    <packaging>jar</packaging>
 
-  <name>jwt-helper</name>
-  <description>JWT helper library project for spring security configurations</description>
-  <url>https://maven.apache.org</url>
+    <!-- Properties information -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <!-- Project information -->
+    <name>jwt-helper</name>
+    <description>JWT helper library project for spring security configurations</description>
+    <url>https://github.com/sachithariyathilaka/jwt-helper</url>
+    <inceptionYear>2024</inceptionYear>
 
-  <dependencies>
+    <!-- Licenses information -->
+    <licenses>
+        <license>
+            <name>Apache Licence</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
 
-    <!-- spring security dependency -->
-    <dependency>
-      <groupId>org.springframework.security</groupId>
-      <artifactId>spring-security-core</artifactId>
-      <version>6.2.1</version>
-    </dependency>
+    <!-- Organization information -->
+    <organization>
+        <name>ByteGen Technologies</name>
+    </organization>
 
-    <dependency>
-      <groupId>org.springframework.security</groupId>
-      <artifactId>spring-security-web</artifactId>
-      <version>6.2.1</version>
-    </dependency>
+    <!-- Developers information -->
+    <developers>
+        <developer>
+            <id>1</id>
+            <name>Sachith Ariyathilaka</name>
+            <organization>ByteGen Technologies</organization>
+            <url>https://github.com/sachithariyathilaka</url>
+            <email>sachith.vidu@yahoo.com</email>
+            <roles>
+                <role>Chairman</role>
+            </roles>
+            <timezone>UTC +5:30</timezone>
+        </developer>
+    </developers>
 
-    <dependency>
-      <groupId>org.apache.tomcat.embed</groupId>
-      <artifactId>tomcat-embed-core</artifactId>
-      <version>10.1.18</version>
-    </dependency>
+    <!-- Repository information -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
-    <!-- junit dependency -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
-      <scope>test</scope>
-    </dependency>
+    <!-- Plugin repository information -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
 
-    <!-- lombok dependency -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.28</version>
-      <scope>provided</scope>
-    </dependency>
+    <!-- Dependency information -->
+    <dependencies>
 
-    <!-- jwt dependency -->
-    <dependency>
-      <groupId>io.jsonwebtoken</groupId>
-      <artifactId>jjwt</artifactId>
-      <version>0.9.1</version>
-    </dependency>
+        <!-- spring security dependency -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>6.2.1</version>
+        </dependency>
 
-    <dependency>
-      <groupId>javax.xml.bind</groupId>
-      <artifactId>jaxb-api</artifactId>
-      <version>2.3.1</version>
-    </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>6.2.1</version>
+        </dependency>
 
-  </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>17</source>
-          <target>17</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>10.1.18</version>
+        </dependency>
+
+        <!-- junit dependency -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- lombok dependency -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.28</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- jwt dependency -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
+    </dependencies>
+
+    <!-- Build information -->
+    <build>
+
+        <!-- General information -->
+        <directory>${project.basedir}/target</directory>
+        <outputDirectory>${project.build.directory}/classes</outputDirectory>
+        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+
+        <!-- Plugin information -->
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>17</source>
+                        <target>17</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+    </build>
+
+    <!-- Reporting information -->
+    <reporting>
+        <outputDirectory>${project.build.directory}/site</outputDirectory>
+    </reporting>
+
+    <!-- Profile information -->
+    <profiles>
+        <profile>
+            <id>Development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
 </project>
