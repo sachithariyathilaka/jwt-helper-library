@@ -36,8 +36,10 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
      */
     public String generateToken(HashMap<String, Object> claimMap, String username) {
 
-        Map<String, Object> claims = new HashMap<>(claimMap);
+        if (claimMap == null || claimMap.isEmpty() || username == null || username.isEmpty())
+            return null;
 
+        Map<String, Object> claims = new HashMap<>(claimMap);
         return Jwts
                 .builder()
                 .setClaims(claims)
@@ -59,12 +61,14 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
      */
     public Object getClaimFromToken(ClaimType claimType, String token) {
 
+        if (token == null || token.isEmpty())
+            return null;
+
         Claims claims = Jwts
                 .parser()
                 .setSigningKey(tokenSecret)
                 .parseClaimsJws(token)
                 .getBody();
-
 
         return switch (claimType) {
             case USERNAME -> getClaimFromToken(claims, Claims::getSubject);
@@ -96,6 +100,10 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
      */
     public boolean validateToken(String token, UserDetails userDetails) {
         final String username = (String) getClaimFromToken(ClaimType.USERNAME, token);
+
+        if (username == null || username.isEmpty())
+            return false;
+
         return username.equals(userDetails.getUsername());
     }
 
