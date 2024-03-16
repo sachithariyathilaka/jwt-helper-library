@@ -1,2 +1,2 @@
-# jwt-token-util
-Java maven library project for JWT token utils 
+# jwt-helper
+Java maven library project for support jwt related spring security configurations
