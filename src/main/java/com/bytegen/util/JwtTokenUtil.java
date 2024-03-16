@@ -1,6 +1,6 @@
-package com.techit;
+package com.bytegen.util;
 
-import com.techit.enums.ClaimType;
+import com.bytegen.enums.ClaimType;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -116,6 +116,9 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
      * @return the boolean
      */
     public boolean isTokenExpired(String token) {
+        if (token == null || token.isEmpty())
+            return true;
+
         final Date expiration = (Date) getClaimFromToken(ClaimType.EXPIRATION_DATE, token);
         return expiration.before(new Date());
     }

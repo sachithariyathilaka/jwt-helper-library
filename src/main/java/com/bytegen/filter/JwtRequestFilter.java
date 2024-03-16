@@ -1,7 +1,7 @@
-package com.techit.filter;
+package com.bytegen.filter;
 
-import com.techit.JwtTokenUtil;
-import com.techit.enums.ClaimType;
+import com.bytegen.util.JwtTokenUtil;
+import com.bytegen.enums.ClaimType;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -2,14 +2,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.techit</groupId>
-  <artifactId>jwt-token-util</artifactId>
+  <groupId>com.bytegen</groupId>
+  <artifactId>jwt-helper</artifactId>
   <version>1.0.0</version>
 
   <packaging>jar</packaging>
 
-  <name>jwt-token-util</name>
-  <description>JWT token util library project for spring security configurations</description>
+  <name>jwt-helper</name>
+  <description>JWT helper library project for spring security configurations</description>
   <url>https://maven.apache.org</url>
 
   <properties>

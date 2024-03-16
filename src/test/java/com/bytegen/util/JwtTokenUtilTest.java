@@ -1,6 +1,7 @@
-package com.techit;
+package com.bytegen.util;
 
-import com.techit.enums.ClaimType;
+import com.bytegen.enums.ClaimType;
+import com.bytegen.util.JwtTokenUtil;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.junit.Assert;
 import org.junit.Before;
@@ -141,10 +142,21 @@ public class JwtTokenUtilTest {
     }
 
     /**
-     * Is token expired test
+     * @method intIsTokenExpiredTest
+     * @description This method is the @Before method of the isTokenExpiredTest.
+     */
+    @Before
+    public void intIsTokenExpiredTest() {
+        intGetClaimFromTokenTest();
+    }
+
+    /**
+     * @method isTokenExpiredTest
+     * @description This method is the test case for isTokenExpired.
      */
     @Test
     public void isTokenExpiredTest() {
         Assert.assertFalse(jwtTokenUtil.isTokenExpired(token));
+        Assert.assertTrue(jwtTokenUtil.isTokenExpired(null));
     }
 }

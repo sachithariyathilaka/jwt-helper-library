@@ -7,8 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jwt-token-util" />
+        <module name="jwt-helper" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jwt-token-util" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

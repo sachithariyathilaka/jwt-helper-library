@@ -1,4 +1,4 @@
-package com.techit.enums;
+package com.bytegen.enums;
 
 /**
  * @enum ClaimType

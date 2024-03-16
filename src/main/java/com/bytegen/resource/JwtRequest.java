@@ -1,4 +1,4 @@
-package com.techit.resource;
+package com.bytegen.resource;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
