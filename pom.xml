@@ -26,7 +26,6 @@
         <jwt.version>0.9.1</jwt.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
 
-
     </properties>
 
     <!-- Project information -->
