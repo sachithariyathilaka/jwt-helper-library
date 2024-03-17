@@ -1,4 +1,4 @@
-package io.github.sachithariyathilaka.authentication;
+package com.bytegen.authentication;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

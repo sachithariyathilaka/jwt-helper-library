@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Core information -->
-    <groupId>io.github.sachithariyathilaka</groupId>
+    <groupId>com.bytegen</groupId>
     <artifactId>jwt-helper</artifactId>
     <version>1.0.0</version>
 
@@ -12,21 +12,7 @@
 
     <!-- Properties information -->
     <properties>
-        <java.version>17</java.version>
-
-        <awaitility.version>4.2.0</awaitility.version>
-        <junit.version>5.10.1</junit.version>
-        <spotless.version>2.43.0</spotless.version>
-        <json-path.version>2.9.0</json-path.version>
-
-        <!-- Plugins version -->
-        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
-        <central-publishing-maven-plugin.version>0.3.0</central-publishing-maven-plugin.version>
-        <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
-        <maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
-        <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
-        <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <!-- Project information -->
@@ -44,17 +30,17 @@
     </licenses>
 
     <!-- Organization information -->
-<!--    <organization>-->
-<!--        <name>ByteGen Technologies</name>-->
-<!--    </organization>-->
+    <organization>
+        <name>ByteGen Technologies</name>
+    </organization>
 
     <!-- Developers information -->
     <developers>
         <developer>
             <id>1</id>
             <name>Sachith Ariyathilaka</name>
-            <organization>io.github.sachithariyathilaka</organization>
-            <organizationUrl>https://github.com/sachithariyathilaka</organizationUrl>
+            <organization>ByteGen Technologies</organization>
+            <url>https://github.com/sachithariyathilaka</url>
             <email>sachith.vidu@yahoo.com</email>
             <roles>
                 <role>Chairman</role>
@@ -101,10 +87,6 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <properties>
-                <gpg.executable>gpg2</gpg.executable>
-                <gpg.passphrase>bytegen</gpg.passphrase>
-            </properties>
         </profile>
     </profiles>
 
@@ -172,97 +154,16 @@
 
         <!-- Plugin information -->
         <pluginManagement>
-
             <plugins>
-
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin.version}</version>
                     <configuration>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
+                        <source>17</source>
+                        <target>17</target>
                     </configuration>
                 </plugin>
-
-                <plugin>
-                    <groupId>org.sonatype.central</groupId>
-                    <artifactId>central-publishing-maven-plugin</artifactId>
-                    <version>${central-publishing-maven-plugin.version}</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <publishingServerId>central</publishingServerId>
-                        <tokenAuth>true</tokenAuth>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>${maven-source-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven-javadoc-plugin.version}</version>
-                    <configuration>
-                        <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>attach-javadocs</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-gpg-plugin</artifactId>
-                    <version>${maven-gpg-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>sign-artifacts</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>sign</goal>
-                            </goals>
-                            <configuration>
-                                <keyname>0xF4524C62</keyname>
-                                <gpgArguments>
-                                    <arg>--pinentry-mode</arg>
-                                    <arg>loopback</arg>
-                                </gpgArguments>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>${nexus-staging-maven-plugin.version}</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <serverId>ossrh</serverId>
-                        <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                    </configuration>
-                </plugin>
-
             </plugins>
-
         </pluginManagement>
 
     </build>
@@ -274,20 +175,11 @@
 
     <!-- Distribution management -->
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>GitHub</id>
+            <name>GitHub Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/sachithariyathilaka/jwt-helper</url>
         </repository>
     </distributionManagement>
-
-    <scm>
-        <connection>scm:git:git://github.com/sachithariyathilaka/jwt-helper.git</connection>
-        <developerConnection>scm:git:ssh://github.com:sachithariyathilaka/jwt-helper.git</developerConnection>
-        <url>https://github.com/sachithariyathilaka/jwt-helper</url>
-    </scm>
 
 </project>

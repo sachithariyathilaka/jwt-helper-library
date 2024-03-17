@@ -1,4 +1,4 @@
-package io.github.sachithariyathilaka.resource;
+package com.bytegen.resource;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,6 +1,6 @@
-package io.github.sachithariyathilaka.util;
+package com.bytegen.util;
 
-import io.github.sachithariyathilaka.enums.ClaimType;
+import com.bytegen.enums.ClaimType;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.junit.Assert;
 import org.junit.Before;
