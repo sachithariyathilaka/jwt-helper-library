@@ -1,4 +1,4 @@
-# JWT Helper
+# JWT Helper Library
 Java maven library project for support jwt related spring security configurations.
 
 * ### Technologies
