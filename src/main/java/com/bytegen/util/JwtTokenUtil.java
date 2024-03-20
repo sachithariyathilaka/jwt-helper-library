@@ -114,7 +114,7 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
 
     /**
      * @method      isTokenExpired
-     * @description Is token expired boolean
+     * @description Validate token expiration validation
      *
      * @param       token the token
      *
