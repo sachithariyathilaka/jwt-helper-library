@@ -17,13 +17,13 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 /**
- * @class JwtRequestFilter
- * @description This class is used to filter web requests with the JWT token
- * @extends OncePerRequestFilter
+ * @class       JwtRequestFilter
+ * @description Provides the filter web requests functionalities with the JWT token
+ * @extends     OncePerRequestFilter
  *
- * @author Sachith Ariyathilaka
- * @version 1.0.0
- * @date 2024/03/16
+ * @author      Sachith Ariyathilaka
+ * @version     1.0.0
+ * @date        2024/03/16
  */
 public class JwtRequestFilter extends OncePerRequestFilter {
 
@@ -32,10 +32,10 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
     /**
      * @constructor JwtRequestFilter
-     * @description This the argument constructor for JwtRequestFilter class
+     * @description Argument constructor for JwtRequestFilter class
      *
-     * @param jwtTokenUtil       the jwt token util
-     * @param userDetailsService the user details service
+     * @param       jwtTokenUtil       the jwt token util
+     * @param       userDetailsService the user details service
      */
     public JwtRequestFilter(JwtTokenUtil jwtTokenUtil, UserDetailsService userDetailsService) {
         this.jwtTokenUtil = jwtTokenUtil;
@@ -43,15 +43,15 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     }
 
     /**
-     * @method doFilterInternal
-     * @description This is an override method to filter web requests with JWT bearer token
+     * @method      doFilterInternal
+     * @description Override method to filter web requests with JWT bearer token
      *
-     * @param request the http servlet request
-     * @param response the http servlet response
-     * @param filterChain the filter chain
+     * @param       request the http servlet request
+     * @param       response the http servlet response
+     * @param       filterChain the filter chain
      *
-     * @throws ServletException the servlet exception
-     * @throws IOException the io exception
+     * @throws      ServletException the servlet exception
+     * @throws      IOException the io exception
      */
     @Override
     protected void doFilterInternal(
