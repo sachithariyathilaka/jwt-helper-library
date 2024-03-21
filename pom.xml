@@ -29,7 +29,7 @@
     </properties>
 
     <!-- Project information -->
-    <name>jwt-helper</name>
+    <name>JWT Helper</name>
     <description>JWT helper library project for spring security configurations</description>
     <url>https://github.com/sachithariyathilaka/jwt-helper</url>
     <inceptionYear>2024</inceptionYear>
