@@ -1,6 +1,6 @@
-package com.bytegen.util;
+package io.github.sachithariyathilaka.util;
 
-import com.bytegen.enums.ClaimType;
+import io.github.sachithariyathilaka.enums.ClaimType;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -14,30 +14,27 @@ import java.util.Map;
 import java.util.function.Function;
 
 /**
- * @record      JwtTokenUtil
- * @description Provides the needed util jwt token related functions
- * @implements  Serializable
+ * Provides the needed util jwt token related functions.
  *
- * @param       tokenValidityPeriod the token validity period
- * @param       tokenSecret the token secret
- * @param       signatureAlgorithm the signature algorithm
+ * @param   tokenValidityPeriod the token validity period
+ * @param   tokenSecret the token secret
+ * @param   signatureAlgorithm the signature algorithm
  *
- * @author      Sachith Ariyathilaka
- * @version     1.0.0
- * @date        2024/03/11
+ * @author  Sachith Ariyathilaka
+ * @version 1.0.0
+ * @since   2024/03/11
  */
 public record JwtTokenUtil(@Getter long tokenValidityPeriod,
                            String tokenSecret,
                            SignatureAlgorithm signatureAlgorithm) implements Serializable {
 
     /**
-     * @method      generateToken
-     * @description Generate jwt token
+     * Generate jwt token.
      *
-     * @param       claimMap the claim map
-     * @param       username the username
+     * @param   claimMap the claim map
+     * @param   username the username
      *
-     * @return      the token
+     * @return  the token
      */
     public String generateToken(HashMap<String, Object> claimMap, String username) {
 
@@ -56,13 +53,12 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
 
 
     /**
-     * @method      getClaimFromToken
-     * @description Gets claim from token
+     * Gets claim from token.
      *
-     * @param       claimType the claim type
-     * @param       token     the token
+     * @param   claimType the claim type
+     * @param   token the token
      *
-     * @return      the claim
+     * @return  the claim
      */
     public Object getClaimFromToken(ClaimType claimType, String token) {
 
@@ -82,26 +78,24 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
     }
 
     /**
-     * @method      getClaimFromToken
-     * @description Gets specific claim from the claim list
+     * Gets specific claim from the claim list.
      *
-     * @param       claims the claim list
-     * @param       claimsResolver     claim filter function
+     * @param   claims the claim list
+     * @param   claimsResolver claim filter function
      *
-     * @return      the claim
+     * @return  the claim
      */
     private <T> T getClaimFromToken(Claims claims, Function<Claims, T> claimsResolver) {
         return claimsResolver.apply(claims);
     }
 
     /**
-     * @method      validateToken
-     * @description Validate token boolean
+     * Validate token boolean.
      *
-     * @param       token       the token
-     * @param       userDetails the user details
+     * @param   token the token
+     * @param   userDetails the user details
      *
-     * @return      the boolean
+     * @return  the boolean
      */
     public boolean validateToken(String token, UserDetails userDetails) {
         final String username = (String) getClaimFromToken(ClaimType.USERNAME, token);
@@ -113,12 +107,11 @@ public record JwtTokenUtil(@Getter long tokenValidityPeriod,
     }
 
     /**
-     * @method      isTokenExpired
-     * @description Validate token expiration validation
+     * Validate token expiration validation.
      *
-     * @param       token the token
+     * @param   token the token
      *
-     * @return      the boolean
+     * @return  the boolean
      */
     public boolean isTokenExpired(String token) {
         if (token == null || token.isEmpty())

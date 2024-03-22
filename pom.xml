@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Core information -->
-    <groupId>com.bytegen</groupId>
+    <groupId>io.github.sachithariyathilaka</groupId>
     <artifactId>jwt-helper</artifactId>
     <version>1.0.0</version>
 
@@ -29,7 +29,7 @@
     </properties>
 
     <!-- Project information -->
-    <name>jwt-helper</name>
+    <name>JWT Helper</name>
     <description>JWT helper library project for spring security configurations</description>
     <url>https://github.com/sachithariyathilaka/jwt-helper</url>
     <inceptionYear>2024</inceptionYear>
@@ -90,7 +90,7 @@
     <!-- Profile information -->
     <profiles>
         <profile>
-            <id>Release</id>
+            <id>release</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -160,33 +160,105 @@
         <finalName>${project.artifactId}-${project.version}</finalName>
 
         <!-- Plugin information -->
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <tokenAuth>true</tokenAuth>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <configuration>
+                            <keyname>0xF4524C62</keyname>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
 
     </build>
+
+    <scm>
+        <url>https://github.com/sachithariyathilaka/jwt-helper-library</url>
+        <connection>scm:git:https://github.com/sachithariyathilaka/jwt-helper-library.git</connection>
+        <developerConnection>scm:git:git@github.com:sachithariyathilaka/jwt-helper-library.git</developerConnection>
+    </scm>
 
     <!-- Reporting information -->
     <reporting>
         <outputDirectory>${project.build.directory}/site</outputDirectory>
     </reporting>
 
+
     <!-- Distribution management -->
     <distributionManagement>
+        <snapshotRepository>
+            <id>central</id>
+<!--            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>-->
+        </snapshotRepository>
         <repository>
-            <id>GitHub</id>
-            <name>GitHub Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/sachithariyathilaka/jwt-helper</url>
+            <id>central</id>
+<!--            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
         </repository>
     </distributionManagement>
+
 
 </project>
