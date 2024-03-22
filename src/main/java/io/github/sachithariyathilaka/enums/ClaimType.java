@@ -1,12 +1,11 @@
 package io.github.sachithariyathilaka.enums;
 
 /**
- * @enum        ClaimType
- * @description Provides the claim type from the claim map
+ * Provides the claim type from the claim map.
  *
- * @author      Sachith Ariyathilaka
- * @version     1.0.0
- * @date        2024/03/16
+ * @author  Sachith Ariyathilaka
+ * @version 1.0.0
+ * @since     2024/03/16
  */
 public enum ClaimType {
     USERNAME("username"),

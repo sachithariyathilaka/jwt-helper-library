@@ -13,12 +13,11 @@ import java.util.Collection;
 import java.util.HashMap;
 
 /**
- * @class       JwtTokenUtilTest
- * @description Unit test the functionalities of JWTTokenUtil class using JUnit
+ * Unit tests the functionalities of JWTTokenUtil class using JUnit.
  *
- * @author      Sachith Ariyathilaka
- * @version     1.0.0
- * @date        2024/03/11
+ * @author  Sachith Ariyathilaka
+ * @version 1.0.0
+ * @since   2024/03/11
  */
 public class JwtTokenUtilTest {
     private static JwtTokenUtil jwtTokenUtil;
@@ -28,8 +27,7 @@ public class JwtTokenUtilTest {
     private String token;
 
     /**
-     * @method      init
-     * @description Before class method of the JWT token util test
+     * Before class method of the JWT token util test.
      */
     @BeforeClass
     public static void init() {
@@ -79,8 +77,7 @@ public class JwtTokenUtilTest {
     }
 
     /**
-     * @method      initGenerateTokenTest
-     * @description Before method of the generate token test case
+     * Before method of the generated token test case.
      */
     @Before
     public void initGenerateTokenTest() {
@@ -89,8 +86,7 @@ public class JwtTokenUtilTest {
     }
 
     /**
-     * @method      generateTokenTest
-     * @description Test case for the generate token function
+     * Test case for the generate token function.
      */
     @Test
     public void generateTokenTest() {
@@ -99,8 +95,7 @@ public class JwtTokenUtilTest {
     }
 
     /**
-     * @method      intGetClaimFromTokenTest
-     * @description Before method of the get claim from token test case
+     * Before method of the get claim from a token test case.
      */
     @Before
     public void intGetClaimFromTokenTest() {
@@ -109,8 +104,7 @@ public class JwtTokenUtilTest {
     }
 
     /**
-     * @method      getClaimFromTokenTest
-     * @description Test case for the get claim from token function
+     * Test case for the get claim from token function.
      */
     @Test
     public void getClaimFromTokenTest() {
@@ -122,8 +116,7 @@ public class JwtTokenUtilTest {
     }
 
     /**
-     * @method      intValidateTokenTest
-     * @description Before method of the validate token test case
+     * Before method of the validate token test case.
      */
     @Before
     public void intValidateTokenTest() {
@@ -131,8 +124,7 @@ public class JwtTokenUtilTest {
     }
 
     /**
-     * @method      validateTokenTest
-     * @description Test case for validate token function
+     * Test case for validate token function
      */
     @Test
     public void validateTokenTest() {
@@ -141,8 +133,7 @@ public class JwtTokenUtilTest {
     }
 
     /**
-     * @method      intIsTokenExpiredTest
-     * @description Before method of the JWT token expiration validation test case
+     * Before method of the JWT token expiration validation test case.
      */
     @Before
     public void intIsTokenExpiredTest() {
@@ -150,8 +141,7 @@ public class JwtTokenUtilTest {
     }
 
     /**
-     * @method      isTokenExpiredTest
-     * @description Test case for JWT token expiration validation test case
+     * Test case for JWT token expiration validation test case.
      */
     @Test
     public void isTokenExpiredTest() {
