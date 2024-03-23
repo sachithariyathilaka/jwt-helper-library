@@ -17,7 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
 
-        <!-- Project properties -->
+        <!-- Dependency properties -->
         <spring.security.core.version>6.2.1</spring.security.core.version>
         <spring.security.web.version>6.2.1</spring.security.web.version>
         <tomcat.embed.core.version>10.1.18</tomcat.embed.core.version>
@@ -25,6 +25,15 @@
         <lombok.version>1.18.28</lombok.version>
         <jwt.version>0.9.1</jwt.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
+
+        <!-- GPG properties -->
+        <gpg.passphrase>jwt-helper></gpg.passphrase>
+
+        <!-- Plugin properties -->
+        <sonartype.central.version>0.4.0</sonartype.central.version>
+        <maven.source.version>2.2.1</maven.source.version>
+        <maven.javadoc.version>2.9.1</maven.javadoc.version>
+        <maven.gpg.version>1.5</maven.gpg.version>
 
     </properties>
 
@@ -94,6 +103,10 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <properties>
+                <gpg.executable>gpg</gpg.executable>
+                <gpg.passphrase>${gpg.passphrase}</gpg.passphrase>
+            </properties>
         </profile>
     </profiles>
 
@@ -174,7 +187,7 @@
             <plugin>
                 <groupId>org.sonatype.central</groupId>
                 <artifactId>central-publishing-maven-plugin</artifactId>
-                <version>0.4.0</version>
+                <version>${sonartype.central.version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <publishingServerId>central</publishingServerId>
@@ -185,7 +198,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
+                <version>${maven.source.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -199,7 +212,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>${maven.javadoc.version}</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -213,7 +226,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
+                <version>${maven.gpg.version}</version>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
@@ -222,7 +235,7 @@
                             <goal>sign</goal>
                         </goals>
                         <configuration>
-                            <keyname>0xF4524C62</keyname>
+                            <keyname>${gpg.passphrase}</keyname>
                             <gpgArguments>
                                 <arg>--pinentry-mode</arg>
                                 <arg>loopback</arg>
@@ -236,6 +249,7 @@
 
     </build>
 
+    <!-- SCM information -->
     <scm>
         <url>https://github.com/sachithariyathilaka/jwt-helper-library</url>
         <connection>scm:git:https://github.com/sachithariyathilaka/jwt-helper-library.git</connection>
@@ -246,19 +260,5 @@
     <reporting>
         <outputDirectory>${project.build.directory}/site</outputDirectory>
     </reporting>
-
-
-    <!-- Distribution management -->
-    <distributionManagement>
-        <snapshotRepository>
-            <id>central</id>
-<!--            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>-->
-        </snapshotRepository>
-        <repository>
-            <id>central</id>
-<!--            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
-        </repository>
-    </distributionManagement>
-
 
 </project>
