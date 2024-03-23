@@ -41,6 +41,12 @@ Java maven library project for support jwt related spring security configuration
   * Changes
     * ClaimTypeEnum: This is used to identify the claim type from the claim map. This is used to getClaimFromToken method in JWTTokenUtil class.
       * USERNAME
-      * EXPIRATION_DATE
+      * EXPIRATION_DATE <br><br>
+      
+  * Release: 1.0.1
+  * Date: 2024/03/23
+  * Module: JWT Helper
+  * Changes
+    * Configuration related bug fixed.
            
 
