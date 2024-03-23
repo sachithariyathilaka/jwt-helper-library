@@ -10,35 +10,6 @@
     <!-- Packaging information -->
     <packaging>jar</packaging>
 
-    <!-- Properties information -->
-    <properties>
-
-        <!-- Project properties -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>17</java.version>
-
-        <!-- Dependency properties -->
-        <spring.security.core.version>6.2.1</spring.security.core.version>
-        <spring.security.web.version>6.2.1</spring.security.web.version>
-        <tomcat.embed.core.version>10.1.18</tomcat.embed.core.version>
-        <junit.version>4.13.2</junit.version>
-        <lombok.version>1.18.28</lombok.version>
-        <jwt.version>0.9.1</jwt.version>
-        <jaxb.api.version>2.3.1</jaxb.api.version>
-
-        <!-- Plugin properties -->
-        <sonartype.central.version>0.4.0</sonartype.central.version>
-        <maven.source.version>2.2.1</maven.source.version>
-        <maven.javadoc.version>2.9.1</maven.javadoc.version>
-        <maven.gpg.version>1.5</maven.gpg.version>
-
-        <!--  GPG properties -->
-        <gpg.keyName>0x7E089909</gpg.keyName>
-        <gpg.executable>gpg</gpg.executable>
-        <gpg.passphrase>jwt-helper</gpg.passphrase>
-
-    </properties>
-
     <!-- Project information -->
     <name>JWT Helper</name>
     <description>JWT helper library project for spring security configurations</description>
@@ -67,46 +38,34 @@
         </developer>
     </developers>
 
-    <!-- Repository information -->
-    <repositories>
-        <repository>
-            <id>central</id>
-            <name>Central Repository</name>
-            <url>https://repo.maven.apache.org/maven2</url>
-            <layout>default</layout>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+    <!-- Properties information -->
+    <properties>
 
-    <!-- Plugin repository information -->
-    <pluginRepositories>
+        <!-- Project properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>17</java.version>
 
-        <pluginRepository>
-            <id>central</id>
-            <name>Central Repository</name>
-            <url>https://repo.maven.apache.org/maven2</url>
-            <layout>default</layout>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-        </pluginRepository>
+        <!-- Dependency properties -->
+        <spring.security.core.version>6.2.1</spring.security.core.version>
+        <spring.security.web.version>6.2.1</spring.security.web.version>
+        <tomcat.embed.core.version>10.1.18</tomcat.embed.core.version>
+        <junit.version>4.13.2</junit.version>
+        <lombok.version>1.18.28</lombok.version>
+        <jwt.version>0.9.1</jwt.version>
+        <jaxb.api.version>2.3.1</jaxb.api.version>
 
-    </pluginRepositories>
+        <!-- Plugin properties -->
+        <sonartype.central.version>0.4.0</sonartype.central.version>
+        <maven.source.version>2.2.1</maven.source.version>
+        <maven.javadoc.version>2.9.1</maven.javadoc.version>
+        <maven.gpg.version>1.5</maven.gpg.version>
 
-    <!-- Profile information -->
-    <profiles>
-        <profile>
-            <id>release</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-    </profiles>
+        <!--  GPG properties -->
+        <gpg.keyName>0x7E089909</gpg.keyName>
+        <gpg.executable>gpg</gpg.executable>
+        <gpg.passphrase>jwt-helper</gpg.passphrase>
+
+    </properties>
 
     <!-- Dependency information -->
     <dependencies>
@@ -160,6 +119,47 @@
         </dependency>
 
     </dependencies>
+
+    <!-- Profile information -->
+    <profiles>
+        <profile>
+            <id>release</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+    <!-- Repository information -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- Plugin repository information -->
+    <pluginRepositories>
+
+        <pluginRepository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+
+    </pluginRepositories>
 
     <!-- Build information -->
     <build>
