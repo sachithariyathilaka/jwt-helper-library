@@ -14,6 +14,7 @@ Java maven library project for support jwt related spring security configuration
     * https://medium.com/@sachithariyathilaka
 
 * ### Release Note
+  
   * Release: 1.0.0 
   * Date: 2024/03/16
   
