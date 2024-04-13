@@ -48,6 +48,12 @@ Java maven library project for support jwt related spring security configuration
   * Date: 2024/03/23
   * Module: JWT Helper
   * Changes
+    * Configuration related bug fixed. <br><br>
+
+  * Release: 1.0.2
+  * Date: 2024/04/13
+  * Module: JWT Helper
+  * Changes
     * Configuration related bug fixed.
            
 
