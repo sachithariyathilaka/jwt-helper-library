@@ -18,9 +18,11 @@
 
     <!-- License information -->
     <licenses>
+             
         <license>
             <name>MIT Licence</name>
         </license>
+             
     </licenses>
 
     <!-- Organization information -->
@@ -31,6 +33,7 @@
 
     <!-- Developer information -->
     <developers>
+             
         <developer>
             <id>1</id>
             <name>Sachith Ariyathilaka</name>
@@ -42,6 +45,7 @@
             </roles>
             <timezone>UTC +5:30</timezone>
         </developer>
+             
     </developers>
 
     <!-- Property information -->
@@ -128,16 +132,19 @@
 
     <!-- Profile information -->
     <profiles>
+             
         <profile>
             <id>release</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
+             
     </profiles>
 
     <!-- Repository information -->
     <repositories>
+             
         <repository>
             <id>central</id>
             <name>Central Repository</name>
@@ -147,6 +154,7 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+             
     </repositories>
 
     <!-- Plugin repository information -->
@@ -173,7 +181,9 @@
         <!-- General information -->
         <directory>${project.basedir}/target</directory>
         <outputDirectory>${project.build.directory}/classes</outputDirectory>
+        <testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
         <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
         <finalName>${project.artifactId}-${project.version}</finalName>
 
         <!-- Plugin information -->
