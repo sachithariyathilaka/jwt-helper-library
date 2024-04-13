@@ -5,7 +5,7 @@
     <!-- Core information -->
     <groupId>io.github.sachithariyathilaka</groupId>
     <artifactId>jwt-helper</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <!-- Packaging information -->
     <packaging>jar</packaging>
