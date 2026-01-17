@@ -11,7 +11,7 @@ Java maven library project for support jwt related spring security configuration
   * Maven
 
 * ### Configuration
-    * [Read on Medium] (https://medium.com/towardsdev/jwt-helper-library-1fad8d1af0ef)
+    * [Read on Medium](https://medium.com/towardsdev/jwt-helper-library-1fad8d1af0ef)
 
 * ### Release Note
   
